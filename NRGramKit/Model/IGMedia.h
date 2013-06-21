@@ -31,6 +31,7 @@
 @property (nonatomic, retain) NSArray* tags;
 @property (nonatomic, retain) NSArray* likes;
 @property (nonatomic, retain) IGImage * image;
+@property (nonatomic, retain) IGImage * video;
 @property (nonatomic, retain) IGLocation * location;
 @property (nonatomic, retain) IGUser * user;
 +(IGMedia*)mediaWithDictionary:(NSDictionary*)dict;

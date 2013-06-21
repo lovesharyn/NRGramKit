@@ -9,7 +9,7 @@
 #import "IGMedia.h"
 
 @implementation IGMedia
-@synthesize Id,link,tags,type,user,image,likes,filter,caption,section,comments,location,likes_count,created_time,userHasLiked,comment_count,received_time;
+@synthesize Id,link,tags,type,user,image,video,likes,filter,caption,section,comments,location,likes_count,created_time,userHasLiked,comment_count,received_time;
 
 +(IGMedia*)mediaWithDictionary:(NSDictionary*)dict
 {
@@ -27,6 +27,7 @@
         media.received_time = [NSNumber numberWithLong:(long)[[NSDate date] timeIntervalSince1970]];
     
     media.image = [IGImage imageWithDictionary:[dict objectForKey:@"images"]];
+    media.video = [IGImage imageWithDictionary:[dict objectForKey:@"videos"]];
     media.user = [IGUser userWithDictionary:[dict objectForKey:@"user"]];
     
     NSMutableArray* tagArray = [[NSMutableArray alloc]init];
