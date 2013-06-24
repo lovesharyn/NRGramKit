@@ -5,10 +5,5 @@
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-#define CLIENT_ID               @"<your client id>"
-#define CLIENT_SECRET           @"<your client secret>"
-#define CALLBACK_URL            @"<your callback"//replace in InstagramLoginDelegate.m too!
-
 #endif
 

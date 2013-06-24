@@ -17,9 +17,18 @@
 #define kLoggedInUserKey                                @"NSGramKit_logged_in_user"
 
 static NSString* access_token;
+static NSString* CLIENT_ID;
+static NSString* CLIENT_SECRET;
+static NSString* CALLBACK_URL;
 
 @implementation NRGramKit
 
++(void)initWithClientId:(NSString*)ClientId WithClientSecret:(NSString*)ClientSecret WithCallBackURL:(NSString*)CallBackURL
+{
+    CLIENT_ID = ClientId;
+    CLIENT_SECRET = ClientSecret;
+    CALLBACK_URL = CallBackURL;
+}
 
 +(void)initialize
 {
