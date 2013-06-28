@@ -42,7 +42,7 @@
         NSDictionary* likesDict = [dict objectForKey:@"likes"];
         media.likes_count =  [likesDict objectForKey:@"count"];
         
-        NSArray* likesArray =[dict objectForKey:@"data"];
+        NSArray* likesArray =[likesDict objectForKey:@"data"];
         NSMutableArray* likeArray = [[NSMutableArray alloc]init];
         for (NSDictionary* likeDict in likesArray) {
             [likeArray addObject:[IGUser userWithDictionary:likeDict]];
