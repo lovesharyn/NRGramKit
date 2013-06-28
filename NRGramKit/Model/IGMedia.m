@@ -42,24 +42,25 @@
         NSDictionary* likesDict = [dict objectForKey:@"likes"];
         media.likes_count =  [likesDict objectForKey:@"count"];
         
-//        NSArray* likesArray =[dict objectForKey:@"data"];
-//        NSMutableArray* likeArray = [[[NSMutableArray alloc]init] autorelease];
-//        for (NSDictionary* likeDict in likesArray) {
-//            [likeArray addObject:[IGUser userWithDictionary:likeDict]];
-//        }
-//        media.likes = likeArray;
+        NSArray* likesArray =[dict objectForKey:@"data"];
+        NSMutableArray* likeArray = [[NSMutableArray alloc]init];
+        for (NSDictionary* likeDict in likesArray) {
+            [likeArray addObject:[IGUser userWithDictionary:likeDict]];
+        }
+        media.likes = likeArray;
     }
     
     if([dict objectForKey:@"comments"]!=[NSNull null])
     {
         NSDictionary* commentsDict = [dict objectForKey:@"comments"];
         media.comment_count =  [commentsDict objectForKey:@"count"];
-//        NSArray* commentsArray =[dict objectForKey:@"data"];
-//        NSMutableArray* commArray = [[[NSMutableArray alloc]init] autorelease];
-//        for (NSDictionary* commDict in commentsArray) {
-//            [commArray addObject:[IGUser userWithDictionary:commDict]];
-//        }
-//        media.comments = commArray;
+
+        NSArray* commentsArray =[dict objectForKey:@"data"];
+        NSMutableArray* commArray = [[NSMutableArray alloc]init];
+        for (NSDictionary* commDict in commentsArray) {
+            [commArray addObject:[IGUser userWithDictionary:commDict]];
+        }
+        media.comments = commArray;
     }
     
     if([dict objectForKey:@"location"]!=[NSNull null])
