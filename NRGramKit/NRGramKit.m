@@ -312,7 +312,7 @@ static NSString* CALLBACK_URL;
 
 +(void)postRelationship:(IGRelationshipAction)action withUser:(NSString*)Id withCallback:(OperationSuccessBlock)callback;
 {
-    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@",kInstagramApiBaseUrlComplete,@"users",Id,@"relationship"];
+    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@",kInstagramApiBaseUrl,@"users",Id,@"relationship"];
     NSString* actionString;
     
     switch (action) {
@@ -617,7 +617,7 @@ static NSString* CALLBACK_URL;
 }
 
 +(void)postComment:(NSString*)message inMediaWithId:(NSString*)mediaId withCallback:(OperationSuccessBlock)callback {
-    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@",kInstagramApiBaseUrlComplete,@"media",mediaId,@"comments"];
+    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@",kInstagramApiBaseUrl,@"media",mediaId,@"comments"];
     
     NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    access_token,@"access_token",
@@ -633,7 +633,7 @@ static NSString* CALLBACK_URL;
 }
 
 +(void)removeCommentWithId:(NSString*)commentId inMediaWithId:(NSString*)mediaId withCallback:(OperationSuccessBlock)callback {
-    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@?access_token=%@",kInstagramApiBaseUrlComplete,@"media",mediaId,@"comments",commentId, access_token];
+    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@?access_token=%@",kInstagramApiBaseUrl,@"media",mediaId,@"comments",commentId, access_token];
     
     [self requestUrl:url verb:@"DELETE" params:nil withCompleteCallback:^(NSDictionary* pagination,NSDictionary* data,NSDictionary* meta)
      {
@@ -664,7 +664,7 @@ static NSString* CALLBACK_URL;
 
 +(void)postLikeInMediaWithId:(NSString*)mediaId withCallback:(OperationSuccessBlock)callback{
     
-    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@?access_token=%@",kInstagramApiBaseUrlComplete,@"media",mediaId,@"likes", access_token];
+    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@?access_token=%@",kInstagramApiBaseUrl,@"media",mediaId,@"likes", access_token];
     [self requestUrl:url verb:@"POST" params:nil withCompleteCallback:^(NSDictionary* pagination,NSDictionary* data,NSDictionary* meta)
      {
          NSString* code= [meta objectForKey:@"code"];
@@ -674,7 +674,7 @@ static NSString* CALLBACK_URL;
 }
 
 +(void)removeLikeInMediaWithId:(NSString*)mediaId withCallback:(OperationSuccessBlock)callback{
-    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@?access_token=%@",kInstagramApiBaseUrlComplete,@"media",mediaId,@"likes", access_token];
+    NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@?access_token=%@",kInstagramApiBaseUrl,@"media",mediaId,@"likes", access_token];
     [self requestUrl:url verb:@"DELETE" params:nil withCompleteCallback:^(NSDictionary* pagination,NSDictionary* data,NSDictionary* meta)
      {
          NSString* code= [meta objectForKey:@"code"];
