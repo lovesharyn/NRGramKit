@@ -451,8 +451,8 @@ static NSString* CALLBACK_URL;
     NSString* currentParam = [self isLoggedIn]?@"access_token":@"client_id";
     NSString* currentParamValue  = [self isLoggedIn]?access_token:CLIENT_ID;
     
-    NSString* minTagIdParam = minTagId!=nil?[NSString stringWithFormat:@"&min_tag_id=%@",minTagId]:@"";
-    NSString* maxTagIdParam = maxTagId!=nil?[NSString stringWithFormat:@"&max_tag_id=%@",maxTagId]:@"";
+    NSString* minTagIdParam = minTagId!=nil?[NSString stringWithFormat:@"&min_id=%@",minTagId]:@"";
+    NSString* maxTagIdParam = maxTagId!=nil?[NSString stringWithFormat:@"&max_id=%@",maxTagId]:@"";
     NSString* countParam = count>0?[NSString stringWithFormat:@"&count=%d",count]:@"";
     
     NSString* url = [NSString stringWithFormat:@"%@/%@/%@/%@?%@=%@%@%@%@",kInstagramApiBaseUrl,@"tags",name,@"media/recent",currentParam,currentParamValue,countParam,minTagIdParam,maxTagIdParam];
